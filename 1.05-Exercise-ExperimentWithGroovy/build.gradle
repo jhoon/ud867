@@ -13,8 +13,11 @@ task stringsAndTypes << {
 
 
     // TODO: Create a variable named foo and assign it the value 4.2
+    def foo = 4.2
 
     // TODO: Print the value and class of foo
+    println "value: ${foo}"
+    println "class: ${foo.class}"
 
     // TODO: Use string interpolation to print the square root of 127
     // HINT: http://docs.oracle.com/javase/7/docs/api/java/lang/Math.html
@@ -33,9 +36,16 @@ task stringsAndTypes << {
 task closures << {
     // TODO: Declare a closure that takes two arguments and adds them together
     // HINT: http://www.groovy-lang.org/closures.html
+    def foo = "bar"
+
+    def clo = { x, y ->
+        x + y
+    }
 
     // TODO: Call your closure with arguments 17 and 25, and print the result
     // Beware that something like `println addTwo 17, 25` is ambiguous
+
+    println clo(17, 25)
 }
 
 task lists << {
@@ -47,4 +57,9 @@ task lists << {
 
     // TODO: Print each capital candy
 
+}
+
+task test << {
+    def foo = "bar"
+    println "$foo + foo = ${foo + "foo"}"
 }
