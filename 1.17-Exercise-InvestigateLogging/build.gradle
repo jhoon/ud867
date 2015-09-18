@@ -28,12 +28,14 @@ task hello(type: HelloTask)
 class HelloTask extends DefaultTask {
     @TaskAction
     void doAction() {
-        println 'Hello World'
+        logger.info("beginning")
+        logger.lifecycle 'Hello World'
+        logger.info("ending")
     }
 }
 
-/*
+
 task derpy << {
+    logger.debug "Catch me if you can"
     primp "Herp de derp"
 }
-*/
