@@ -30,3 +30,12 @@ apply plugin: 'java'
 task printDependencies << {
     configurations.compile.each { println it.name }
 }
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	compile 'commons-io:commons-io:2.4'
+	compile fileTree(dir: 'libs', include: '*.jar')
+}
